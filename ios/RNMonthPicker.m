@@ -41,13 +41,10 @@ NSInteger selectedYearRow;
 RCT_NOT_IMPLEMENTED(- (instancetype)initWithCoder:(NSCoder *)aDecoder)
 
 - (void)initMonths:(NSString *)useLocale {
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:useLocale];
-    [df setLocale:locale];
     if (months) {
         [self reloadComponent:0];
     }
-    months = [NSArray arrayWithArray:[df monthSymbols]];
+    months = [NSArray arrayWithObjects: @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9",@"10",@"11",@"12", nil];
 }
 
 - (void)initYears:(NSInteger)selectedYear {
